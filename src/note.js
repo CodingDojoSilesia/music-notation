@@ -1,3 +1,8 @@
+/**
+ * Wartości pochodzą z:
+ * https://pages.mtu.edu/~suits/notefreqs.html
+ */
+
 const frequenciesMap = {
     'C4': 261.63,
     'C#4': 277.18,
