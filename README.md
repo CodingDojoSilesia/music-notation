@@ -22,6 +22,7 @@ jest odpowiednikiem:
 define melody is note(C4,Q) | note(D4,Q) | note(E4,Q) | note(E4,Q)
 ```
 Sekwencje nut oddzielamy znakiem `|`. Nuty grane są od lewej do prawej, bez przerw, chyba, że zostanie wykorzystana opisana niżej pauza.
+Wszystkie skewencje nutowe muszą być zapisane w funkcjach.
 
 Dodanie symbolu po nucie `@` spowoduje dodanie pauzy przed dźwiękiem. Przykładowo `note(A4, Q) @ Q` oznacza, że dźwięk A4 zostanie odtworzony po czasie równym trwaniu ćwierćnuty.
 
@@ -33,8 +34,6 @@ jest odpowiednikiem:
 ```
 define melody is note(C4,Q) | note(C4,Q) | note(C4,Q) | note(D4,Q)
 ```
-
-Białe znaki w pliku mogą zostać ignorowane, wszystkie skewencje nutowe muszą być zapisane w funkcjach.
 
 ### Cheat sheet
 
