@@ -8,7 +8,13 @@ class MelodyQueue
     enqueueTone(duration, ...frequencies) {
         let tones = [];
         for (let frequency of frequencies) {
-            tones.push(tone({ freq: frequency, lengthInSecs: duration, volume: 30, rate: global.SamplingFrequency }));
+            tones.push(tone({
+				freq: frequency,
+				lengthInSecs: duration,
+				volume: 30,
+				rate: global.SamplingFrequency,
+				shape: 'sine'
+			}));
         }
         for (let i = 0; i < tones[0].length; ++i) {
             let sound = tones[0][i];
@@ -22,9 +28,6 @@ class MelodyQueue
         for (let i = 0; i < global.SamplingFrequency * duration; ++i) {
             this.queue.push(0);
         }
-    }
-    getQueue() {
-        return this.queue;
     }
 }
 

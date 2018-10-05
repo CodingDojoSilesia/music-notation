@@ -25,9 +25,9 @@ melody1.enqueueTone(global.Q, note('E4'));
 melody1.enqueueTone(global.Q, note('F4'));
 melody1.enqueueTone(global.Q, note('D4'));
 melody1.enqueueTone(global.Q, note('D4'));
-melody1.enqueueTone(global.Q, note('C4'));
-melody1.enqueueTone(global.Q, note('E4'));
-melody1.enqueueTone(global.Q, note('G4'));
+melody1.enqueueTone(global.E, note('C4'));
+melody1.enqueueTone(global.E, note('E4'));
+melody1.enqueueTone(global.E, note('G4'));
 WaveGenerator.save('./kotek.wav', melody1);
 
 let melody2 = new MelodyQueue();

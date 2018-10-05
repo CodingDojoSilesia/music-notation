@@ -4,10 +4,10 @@ const fs = require('fs');
 module.exports = {
     save(filepath, melodyQueue) {
         let file = fs.createWriteStream(filepath);
-        file.write(header(melodyQueue.getQueue().length, {
+        file.write(header(melodyQueue.queue.length, {
             bitDepth: 8
         }));
-        let data = Uint8Array.from(melodyQueue.getQueue(), function (val) {
+        let data = Uint8Array.from(melodyQueue.queue, function (val) {
             return val + 128;
         });
         buffer = Buffer.from ? Buffer.from(data) : new Buffer(data);
