@@ -8,6 +8,7 @@ zbiór nut (odzielonych średnikiem, np. `note(A4;B4,Q)`), które mają być zag
 - _Q_, ćwierćnuta;
 - _E_, ósemka;
 - _S_, szesnastka.
+
 Czas trwania poszczególnych dźwięków wyliczany jest względem całej nuty, domyślnie to około 2 sekundy.
 
 Kolejna konstrukcja to bezargumentowa funkcja definowana za pomocą składni `define {nazwa funkcji} is {nuta|funkcja}|{nuta|funkcja}|...`. Każdy plik musi zawierać jedną funkcję o  nazwie `melody`, to ona jest
