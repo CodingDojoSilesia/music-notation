@@ -24,10 +24,22 @@ class MelodyQueue
 				shape: this.shape
 			}));
         }
+		let volume = this.queue.length > 0 ? this.queue[this.queue.length - 1] : 0;
 		for (let i = 0; i < global.SamplingFrequency * this.autopause; ++i) {
-            this.queue.push(0);
+			if (volume > 0) {
+				volume--;
+			} else if (volume < 0) {
+				volume++;
+			}
+            this.queue.push(volume);
         }
-        for (let i = 0; i < tones[0].length; ++i) {
+		let limit = tones[0].length;
+		for (let j = 1; j < tones.length; ++j) {
+			if (tones[j].length < limit) {
+				limit = tones[j].length;
+			}
+		}
+        for (let i = 0; i < limit; ++i) {
             let sound = tones[0][i];
             for (let j = 1; j < tones.length; ++j) {
                 sound += tones[j][i];
@@ -36,8 +48,14 @@ class MelodyQueue
         }
     }
     enqueuePause(duration) {
+		let volume = this.queue.length > 0 ? this.queue[this.queue.length - 1] : 0;
         for (let i = 0; i < global.SamplingFrequency * duration; ++i) {
-            this.queue.push(0);
+			if (volume > 0) {
+				volume--;
+			} else if (volume < 0) {
+				volume++;
+			}
+            this.queue.push(volume);
         }
     }
 	mix(melodyQueue) {

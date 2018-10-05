@@ -123,5 +123,4 @@ melody3.enqueueTone(global.E, [note('G3'), note('C4')]);
 melody3.enqueueTone(global.E, [note('C4'), note('F4')]);
 melody3.enqueueTone(global.H, [note('B3'), note('E4')]);
 WaveGenerator.save('./rocky.wav', melody3);
-
 */
