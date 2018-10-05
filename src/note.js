@@ -15,7 +15,8 @@ const frequenciesMap = {
     'G#4': 415.3,
     'A4': 440,
     'A#4': 466.16,
-    'B4': 493.88
+    'B4': 493.88,
+    'C5': 523.25,
 };
 
 module.exports = function (note) {
