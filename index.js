@@ -3,6 +3,7 @@
  * minuty, jak również długość taktu. Zastosowano popularne metrum 4/4.
  */
 global.BMP = 120;
+global.SamplingFrequency = 44100;
 global.N = 60 / global.BMP * 4; // Czas trwania nuty w sekundach
 global.H = global.N / 2; // Czas trwania półnuty w sekundach
 global.Q = global.N / 4; // Czas trwania ćwierćnuty w sekundach
@@ -17,14 +18,15 @@ const WaveGenerator = require('./src/WaveGenerator.js');
 const note = require('./src/note.js');
 
 let melody = new MelodyQueue();
-melody.enqueue(global.Q, note('G4'));
-melody.enqueue(global.Q, note('E4'));
-melody.enqueue(global.Q, note('E4'));
-melody.enqueue(global.Q, note('F4'));
-melody.enqueue(global.Q, note('D4'));
-melody.enqueue(global.Q, note('D4'));
-melody.enqueue(global.Q, note('C4'));
-melody.enqueue(global.Q, note('E4'));
-melody.enqueue(global.Q, note('G4'));
+melody.enqueueTone(global.Q, note('G4'));
+melody.enqueueTone(global.Q, note('E4'));
+melody.enqueueTone(global.Q, note('E4'));
+melody.enqueueTone(global.Q, note('F4'));
+melody.enqueueTone(global.Q, note('D4'));
+melody.enqueueTone(global.Q, note('D4'));
+melody.enqueuePause(global.Q);
+melody.enqueueTone(global.Q, note('C4'));
+melody.enqueueTone(global.Q, note('E4'));
+melody.enqueueTone(global.Q, note('G4'));
 
 WaveGenerator.save('./test.wav', melody);
