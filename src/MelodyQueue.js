@@ -5,10 +5,10 @@ class MelodyQueue
     constructor() {
         this.queue = [];
     }
-    enqueue(duration, ...sounds) {
+    enqueue(duration, ...frequencies) {
         let tones = [];
-        for (let sound of sounds) {
-            tones.push(tone({ freq: sound, lengthInSecs: duration, volume: tone.MAX_8 }));
+        for (let frequency of frequencies) {
+            tones.push(tone({ freq: frequency, lengthInSecs: duration, volume: tone.MAX_8 }));
         }
         for (let i = 0; i < tones[0].length; ++i) {
             let sound = tones[0][i];
