@@ -1,7 +1,7 @@
 ## Uproszczona programistyczna notacja muzyczna
 
 Zaproponowana notacja bazuje luźno na artykule _(Extending Music Notation Through Programming)[https://pdfs.semanticscholar.org/6c83/e5602e2ba9ef9a16914ba1e35f7256a20d82.pdf]_.
-Podstawową konstrukcją jest *nuta* zapisywana jako wbudowana funkcja `note(A4,Q)`. Pierwszy argumentem jest zapisana literowa nuta lub 
+Podstawową konstrukcją jest *nuta* zapisywana jako wbudowana funkcja `note(A4,Q)`. Pierwszy argumentem jest literowa nuta (od C0 do B8) lub 
 zbiór nut (odzielonych średnikiem, np. `note(A4;B4,Q)`), które mają być zagrane jednocześnie. Drugi argument oznacza czas odtwarzania dźwięku i może przyjąć nastepujące wartości:
 - _N_, cała nuta;
 - _H_, półnuta;
