@@ -8,7 +8,7 @@ class MelodyQueue
     enqueue(duration, ...frequencies) {
         let tones = [];
         for (let frequency of frequencies) {
-            tones.push(tone({ freq: frequency, lengthInSecs: duration, volume: tone.MAX_8 }));
+            tones.push(tone({ freq: frequency, lengthInSecs: duration, volume: 30 }));
         }
         for (let i = 0; i < tones[0].length; ++i) {
             let sound = tones[0][i];
