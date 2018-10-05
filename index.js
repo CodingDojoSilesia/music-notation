@@ -18,9 +18,14 @@ const MelodyQueue = require('./src/MelodyQueue.js');
 const WaveGenerator = require('./src/WaveGenerator.js');
 const note = require('./src/note.js');
 
+/*
+ * `parse` powinno zwracać `MelodyQueue`.
+ */
+//WaveGenerator.save('./song1.wav', parse(fs.readFileSync('./songs/song1.txt', 'utf8')));
+//WaveGenerator.save('./song2.wav', parse(fs.readFileSync('./songs/song2.txt', 'utf8')));
+//WaveGenerator.save('./song3.wav', parse(fs.readFileSync('./songs/song3.txt', 'utf8')));
 
-//let melody = 
-
+/*
 let melody1 = new MelodyQueue();
 melody1.enqueueTone(global.Q, note('G4'));
 melody1.enqueueTone(global.Q, note('E4'));
@@ -51,3 +56,4 @@ melody2.enqueueTone(global.E, note('E4'));
 melody2.enqueueTone(global.E, note('F4'));
 melody2.enqueueTone(global.H, note('D4'));
 WaveGenerator.save('./starwars.wav', melody2);
+*/
