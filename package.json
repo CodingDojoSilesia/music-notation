@@ -1,0 +1,12 @@
+{
+  "name": "CodingDojoJS-WaveGenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "tonegenerator": "^0.3.2",
+    "waveheader": "0.0.2"
+  }
+}
