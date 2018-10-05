@@ -18,6 +18,9 @@ const MelodyQueue = require('./src/MelodyQueue.js');
 const WaveGenerator = require('./src/WaveGenerator.js');
 const note = require('./src/note.js');
 
+
+//let melody = 
+
 let melody1 = new MelodyQueue();
 melody1.enqueueTone(global.Q, note('G4'));
 melody1.enqueueTone(global.Q, note('E4'));

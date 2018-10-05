@@ -4,7 +4,6 @@
  * środkowe C to C4
  */
 
-
 let frequencies = {};
 const baseFrequency = 440;
 const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
