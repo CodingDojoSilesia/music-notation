@@ -60,17 +60,6 @@ class MelodyQueue
             this.queue.push(volume);
         }
     }
-	mix(melodyQueue) {
-		let newMelodyQueue = new MelodyQueue();
-		const limit = Math.min(melodyQueue.queue.length, this.queue.length);
-		for (let i = 0; i < limit; ++i) {
-			newMelodyQueue.queue.push(
-                2 * (this.queue[i] + melodyQueue.queue[i]) - this.queue[i] * melodyQueue.queue[i] / silence 
-                    - silence * 2
-            );
-		}
-		return newMelodyQueue;
-	}
 }
 
 module.exports = MelodyQueue;
