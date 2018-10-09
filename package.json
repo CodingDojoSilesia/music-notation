@@ -5,7 +5,13 @@
   "main": "index.js",
   "author": "",
   "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^6.3.5",
     "tonegenerator": "^0.3.2",
     "waveheader": "0.0.2"
   }
