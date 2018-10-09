@@ -62,16 +62,12 @@ class MelodyQueue
     }
 	mix(melodyQueue) {
 		let newMelodyQueue = new MelodyQueue();
-		const limit = melodyQueue.queue.length > this.queue.length ? melodyQueue.queue.length : this.queue.length;
+		const limit = Math.min(melodyQueue.queue.length, this.queue.length);
 		for (let i = 0; i < limit; ++i) {
-			let sound = 0;
-			if (i < melodyQueue.queue.length) {
-				sound += melodyQueue.queue[i];
-			}
-			if (i < this.queue.length) {
-				sound += melodyQueue.queue[i];
-			}
-			newMelodyQueue.push(sound);
+			newMelodyQueue.queue.push(
+                2 * (this.queue[i] + melodyQueue.queue[i]) - this.queue[i] * melodyQueue.queue[i] / silence 
+                    - silence * 2
+            );
 		}
 		return newMelodyQueue;
 	}
