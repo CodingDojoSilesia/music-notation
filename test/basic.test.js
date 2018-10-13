@@ -22,13 +22,31 @@ test('getNotesArray(["A4", "B4"]) should returns A4 and B4 notes', () => {
     let notes = MelodyGenerator.getNotesArray(['A4', 'B4']);
     expect(notes).toEqual([note('A4'), note('B4')]);
 });
-
-test('MelodyGenerator.fromString("note(A4, Q)") should plays note(A4, Q)', () => {
+/*
     MelodyGenerator.fromString('note(A4, Q)');
     let melodyQueue = MelodyQueue.mock.instances[0];
     (
         expect(melodyQueue.enqueueTone)
         .toHaveBeenCalledWith(global.Q, [note('A4')])
     );
+*/
+
+test('eval("note(A4, Q)")', () => {
+    let data = MelodyGenerator.eval('note(A4, Q)');
+    expect(data).toEqual({
+        type: 'music',
+        elements: [
+            {type: 'note', notes: ['A4'], time: 'Q'}
+        ]
+    });
 });
 
+test('eval("note(A4;B4;C4, Q)")', () => {
+    let data = MelodyGenerator.eval('note(A4;B4;C4, Q)');
+    expect(data).toEqual({
+        type: 'music',
+        elements: [
+            {type: 'note', notes: ['A4','B4','C4'], time: 'Q'}
+        ]
+    });
+});
