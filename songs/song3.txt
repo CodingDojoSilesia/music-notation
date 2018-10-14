@@ -1,1 +1,16 @@
+define noteA is pause(HT) | note(C4, E)
+define noteB is pause(HT) | note(C4;E4, E)
+define noteCE is pause(HT) | note(C4;E4;G4, E)
+define noteCH is pause(HT) | note(C4;E4;G4, E)
+define melodyA is pause(HT) | note(E4, Q) | note(G4, Q) | note(A4, H)
+define melodyB is pause(HT) | note(A4, Q) | note(B4, Q) | note(E4, H)
 
+play repeat 7 times noteA | noteB
+play repeat 3 times noteA | noteB
+play repeat 7 times noteB | noteCE
+play repeat 3 times noteB
+play repeat 7 times noteCE | noteCH
+play repeat 6 times noteCE
+play pause(HT)
+play melodyA | melodyB
+play melodyA | melodyB
