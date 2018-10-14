@@ -5,7 +5,11 @@
   "main": "index.js",
   "author": "",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
+    "jest": "^23.6.0",
     "tonegenerator": "^0.3.2",
     "waveheader": "0.0.2"
   }
