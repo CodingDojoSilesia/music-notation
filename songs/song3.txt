@@ -25,4 +25,4 @@ play pause(HT) | halfMelA | halfMelA | halfMelB
 play noteA 
 play repeat 2 times OutroA
 play repeat 2 times OutroB
-play outroC | outroD | outroE
+play OutroC | OutroD | OutroE
