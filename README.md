@@ -79,7 +79,6 @@ jest odpowiednikiem:
 define melody is note(C4,Q) | note(D4,Q) | note(E4,Q) | note(E4,Q)
 ```
 
-
 ### Cheat sheet
 
 Więcej w `examples.js`
