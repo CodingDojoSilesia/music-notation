@@ -1,10 +1,20 @@
 const fs = require('fs');
-require('./src/globals.js');
-const MelodyQueue = require('./src/MelodyQueue.js');
-const waveGenerator = require('./src/WaveGenerator.js');
-const note = require('./src/note.js');
-const melodyGenerator = require('./src/MelodyGenerator.js');
+const process = require('process');
 
-waveGenerator.save('./song1.wav', melodyGenerator.fromString(fs.readFileSync('./songs/song1.txt', 'utf8')));
-waveGenerator.save('./song2.wav', melodyGenerator.fromString(fs.readFileSync('./songs/song2.txt', 'utf8')));
-waveGenerator.save('./song3.wav', melodyGenerator.fromString(fs.readFileSync('./songs/song3.txt', 'utf8')));
+const melodyGenerator = require('./src/MelodyGenerator.js');
+const waveGenerator = require('./src/WaveGenerator');
+
+const inputFilepath = process.argv[2] || null;
+const outputFilepath = process.argv[3] || 'out.wav';
+
+if (inputFilepath === null) {
+    process.stderr.write(
+        'usage: node index.js INPUT_SONG_FILEPATH [WAV_OUTPUT_PATH]\n'
+    );
+    process.exit(1);
+}
+
+const data = fs.readFileSync(inputFilepath, 'utf8');
+const output = melodyGenerator.fromString(data);
+waveGenerator.save(outputFilepath, output);
+process.stderr.write(`song has been saved to ${outputFilepath}\n`);

@@ -1,4 +1,4 @@
-require('./globals.js');
+const durations = require('./durations.js');
 const MelodyQueue = require('./MelodyQueue.js');
 const waveGenerator = require('./WaveGenerator.js');
 const note = require('./note.js');
@@ -7,6 +7,10 @@ class MelodyGenerator {
     fromString(melodyString) {
         let lines = melodyString.split('\n');
         let objs = lines.map((line) => parse(line));
+
+        let melody = new MelodyQueue();
+        melody.enqueueTone(durations.Q, note('A4'));
+        return melody;
     }
 
     getNotesArray(notes) {

@@ -1,4 +1,4 @@
-require('../src/globals.js');
+const durations = require('../src/durations.js');
 const MelodyQueue = require('../src/MelodyQueue.js');
 const waveGenerator = require('../src/WaveGenerator.js');
 const MelodyGenerator = require('../src/MelodyGenerator.js');
@@ -27,7 +27,7 @@ test('getNotesArray(["A4", "B4"]) should returns A4 and B4 notes', () => {
     const melodyQueue = MelodyQueue.mock.instances[0];
     (
         expect(melodyQueue.enqueueTone)
-        .toHaveBeenCalledWith(global.Q, [note('A4')])
+        .toHaveBeenCalledWith(durations.Q, [note('A4')])
     );
 */
 

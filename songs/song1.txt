@@ -1,1 +1,4 @@
+play note(G4, Q) | note(E4, Q) | note(E4, Q)
+play note(F4, Q) | repeat 2 times note(D4, Q)
+play note(C4, E) | note(E4, E) | note(G4, E)
 
