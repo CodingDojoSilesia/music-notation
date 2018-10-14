@@ -4,17 +4,53 @@ const waveGenerator = require('./WaveGenerator.js');
 const note = require('./note.js');
 
 class MelodyGenerator {
+    constructor() {
+        this.functions = new Map();
+    }
     fromString(melodyString) {
         let lines = melodyString.split('\n');
-        let objs = lines.map((line) => parse(line));
+        let objs = lines.map((line) => this.parse(line));
 
         let melody = new MelodyQueue();
-        melody.enqueueTone(durations.Q, note('A4'));
+        return this.eval(melody, objs);
+    }
+
+    eval(melody, objs) {
+        objs.forEach((obj) => {
+            if (obj === null) {
+                return;
+            }
+            if (obj.type === 'play') {
+                this.evalElements(melody, obj.elements);
+            } else if (obj.type === 'define') {
+                this.functions.set(obj.name, obj.elements);
+            }
+        });
+
         return melody;
     }
 
-    getNotesArray(notes) {
-        return notes.map((n) => note(n));
+    evalElements(melody, objs) {
+        objs.forEach((obj) => this.evalElement(melody, obj));
+    }
+
+    evalElement(melody, obj) {
+        if (obj.type === 'note') {
+            const duration = durations[obj.time];
+            const notes = obj.notes.map((n) => note(n));
+            melody.enqueueTone(duration, notes);
+        } else if (obj.type === 'pause') {
+            const duration = durations[obj.time];
+            melody.enqueuePause(duration);
+        } else if (obj.type === 'repeat') {
+            const times = obj.times;
+            for(let i=0; i < times; i++) {
+                this.evalElement(melody, obj.body);
+            }
+        } else if (obj.type === 'function') {
+            const elements = this.functions.get(obj.name);
+            this.evalElements(melody, elements);
+        }
     }
 
     parse(line) {
