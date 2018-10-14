@@ -6,14 +6,14 @@ const note = require('./note.js');
 class MelodyGenerator {
     fromString(melodyString) {
         let lines = melodyString.split('\n');
-        let objs = lines.map((line) => eval(line));
+        let objs = lines.map((line) => parse(line));
     }
 
     getNotesArray(notes) {
         return notes.map((n) => note(n));
     }
 
-    eval(line) {
+    parse(line) {
         let match = line.match(/note\(([\w;]+)\s*,\s*(\w)\)/);
         if (!match) {
             return;

@@ -31,8 +31,8 @@ test('getNotesArray(["A4", "B4"]) should returns A4 and B4 notes', () => {
     );
 */
 
-test('eval("note(A4, Q)")', () => {
-    let data = MelodyGenerator.eval('note(A4, Q)');
+test('parse("note(A4, Q)")', () => {
+    let data = MelodyGenerator.parse('note(A4, Q)');
     expect(data).toEqual({
         type: 'music',
         elements: [
@@ -41,8 +41,8 @@ test('eval("note(A4, Q)")', () => {
     });
 });
 
-test('eval("note(A4;B4;C4, Q)")', () => {
-    let data = MelodyGenerator.eval('note(A4;B4;C4, Q)');
+test('parse("note(A4;B4;C4, Q)")', () => {
+    let data = MelodyGenerator.parse('note(A4;B4;C4, Q)');
     expect(data).toEqual({
         type: 'music',
         elements: [
