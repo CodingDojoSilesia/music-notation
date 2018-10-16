@@ -13,24 +13,6 @@ beforeEach(() => {
     MelodyQueue.mockClear();
 });
 
-test('getNotesArray(["A4"]) should returns note("A4")', () => {
-    const notes = MelodyGenerator.getNotesArray(['A4']);
-    expect(notes).toEqual([note('A4')]);
-});
-
-test('getNotesArray(["A4", "B4"]) should returns A4 and B4 notes', () => {
-    const notes = MelodyGenerator.getNotesArray(['A4', 'B4']);
-    expect(notes).toEqual([note('A4'), note('B4')]);
-});
-/*
-    MelodyGenerator.fromString('note(A4, Q)');
-    const melodyQueue = MelodyQueue.mock.instances[0];
-    (
-        expect(melodyQueue.enqueueTone)
-        .toHaveBeenCalledWith(durations.Q, [note('A4')])
-    );
-*/
-
 test('parse("play note(A4, Q)")', () => {
     const data = MelodyGenerator.parse('play note(A4, Q)');
     expect(data).toEqual({
