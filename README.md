@@ -42,7 +42,7 @@ Sekwencje nut/funkcji oddzielamy znakiem `|`. Nuty grane są od lewej do prawej,
 
 ### Pauza
 
-Jest to specjalna funkcja `pause(X)` gdzie X jest nutą (N, H, Q etc).
+Jest to specjalna funkcja `pause(X)` gdzie X jest czasem trwania pauzy (N, H, Q etc).
 Zapis:
 
 ```
