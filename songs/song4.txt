@@ -1,0 +1,6 @@
+define mel01 is pause(HT) | note(E5, E)
+play repeat 3 times mel01 | pause(HT) | note(C5, E) | pause(HT) | note(E5, E) | pause(HT) | note(G5, E) | pause(HT) | note(G4, H)
+play pause(HT) | note(C5, Q) | pause(HT) | note(G4, Q) | pause(HT) | note(E4, Q)
+play pause(HT) | note(A4, E) | pause(HT) | note(B4, E) | pause(HT) | note(A#4, E) | pause(HT) | note(A4, E)
+play pause(HT) | note(G4, E) | pause(HT) | note(E5, E) | pause(HT) | note(G5, E) | pause(HT) | note(A5, E)
+play pause(HT) | note(F5, E) | pause(HT) | note(G5, S) | pause(HT) | note(E5, S) | pause(HT) | note(C5, S) | pause(HT) | note(D5, S) | pause(HT) | note(B4, E)

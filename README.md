@@ -31,7 +31,9 @@ Drugi argument oznacza czas odtwarzania dźwięku i może przyjąć nastepujące
 - _H_, półnuta;
 - _Q_, ćwierćnuta;
 - _E_, ósemka;
-- _S_, szesnastka.
+- _S_, szesnastka;
+- _T_, trzydziestodwójka;
+- _HT_, sześćdziesięcioczwórka.
 
 Czas trwania poszczególnych dźwięków wyliczany jest względem całej nuty, domyślnie to około 2 sekundy. Czasy trwania zostały zdefiniowane
 jako wartości globalne w pliku `durations.js`. 
