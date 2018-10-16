@@ -28,7 +28,7 @@ test('MelodyGenerator.fromString("note(A4, Q)") should plays note(A4, Q)', () =>
     let melodyQueue = MelodyQueue.mock.instances[0];
     (
         expect(melodyQueue.enqueueTone)
-        .toHaveBeenCalledWith(durations.Q, [note('A4')])
+        .toHaveBeenCalledWith(durations.Q, note('A4'))
     );
 });
 

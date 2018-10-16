@@ -33,7 +33,8 @@ Drugi argument oznacza czas odtwarzania dźwięku i może przyjąć nastepujące
 - _E_, ósemka;
 - _S_, szesnastka.
 
-Czas trwania poszczególnych dźwięków wyliczany jest względem całej nuty, domyślnie to około 2 sekundy.
+Czas trwania poszczególnych dźwięków wyliczany jest względem całej nuty, domyślnie to około 2 sekundy. Czasy trwania zostały zdefiniowane
+jako wartości globalne w pliku `durations.js`. 
 
 Sekwencje nut/funkcji oddzielamy znakiem `|`. Nuty grane są od lewej do prawej, bez przerw, chyba, że zostanie wykorzystana opisana niżej pauza.
 
@@ -65,7 +66,6 @@ play note(C4,Q) | note(C4,Q) | note(C4,Q) | note(D4,Q)
 ### Funkcje
 Kolejna konstrukcja to bezargumentowa funkcja definowana za pomocą składni
 `define {nazwa funkcji} is {nuta|funkcja}|{nuta|funkcja}|...`.
-Każdy plik musi zawierać jedną funkcję o  nazwie `melody`, to ona jest funkcją startową utworu.
 Funkcje wywołujemy za pomocą jej nazwy, przykładowo:
 
 ```
@@ -91,6 +91,6 @@ play note(A4, Q) | note(C4, Q) - generuj ton A4 a zaraz po nim ton C4, sekwencja
 play note(A4, Q) | foo - generuj ton A4 a zaraz po sekwencje tonów zapisanych po funkcją o nazwie foo
 play pause(Q) | note(A4, Q) - generuj ton A4 po czasie równym trwaniu ćwierćnuty
 play repeat 3 times note(C4,Q) - trzykrotnie generuj ton C4 przez czas równy trwaniu ćwierćnuty
-define melody is note(E4,Q) | note(E4,Q) - funkcja (makro) o nazwie melody, funkcja melody rozpoczyna utwór
+define melody is note(E4,Q) | note(E4,Q) - funkcja (makro) o nazwie melody
 ```
 
