@@ -1,6 +1,6 @@
 const tone = require('tonegenerator');
 const SAMPLING_FREQUENCY = 44100;
-const silence = 128;
+const SILENCE = 128;
 
 class MelodyQueue
 {
@@ -24,13 +24,13 @@ class MelodyQueue
 				volume: 30,
 				rate: global.SamplingFrequency,
 				shape: this.shape
-			}).map(val => val + silence));
+			}).map(val => val + SILENCE));
         }
 		let volume = this.queue.length > 0 ? this.queue[this.queue.length - 1] : 0;
 		for (let i = 0; i < SAMPLING_FREQUENCY * this.autopause; ++i) {
-			if (volume > silence) {
+			if (volume > SILENCE) {
 				volume--;
-			} else if (volume < silence) {
+			} else if (volume < SILENCE) {
 				volume++;
 			}
             this.queue.push(volume);
@@ -44,7 +44,7 @@ class MelodyQueue
         for (let i = 0; i < limit; ++i) {
             let sound = tones[0][i];
             for (let j = 1; j < tones.length; ++j) {
-                sound = 2 * (sound + tones[j][i]) - sound * tones[j][i] / silence - silence * 2;
+                sound = 2 * (sound + tones[j][i]) - sound * tones[j][i] / SILENCE - SILENCE * 2;
             }
             this.queue.push(sound);
         }
@@ -52,9 +52,9 @@ class MelodyQueue
     enqueuePause(duration) {
 		let volume = this.queue.length > 0 ? this.queue[this.queue.length - 1] : 0;
         for (let i = 0; i < SAMPLING_FREQUENCY * duration; ++i) {
-			if (volume > silence) {
+			if (volume > SILENCE) {
 				volume--;
-			} else if (volume < silence) {
+			} else if (volume < SILENCE) {
 				volume++;
 			}
             this.queue.push(volume);

@@ -2,7 +2,7 @@ const durations = require('./src/durations.js');
 const MelodyQueue = require('./src/MelodyQueue.js');
 const note = require('./src/note.js');
 
-let melody1 = new MelodyQueue();
+let melody = new MelodyQueue();
 
 // play note(A4, Q)
 melody.enqueueTone(durations.Q, [note('A4')]);
@@ -18,7 +18,8 @@ melody.enqueueTone(durations.Q, [note('A4')]);
 melody.enqueueTone(durations.Q, [note('C4')]);
 
 // play note(A4, Q) | foo - generuj ton A4 a zaraz po sekwencje tonów zapisanych po funkcją o nazwie foo
-melody.enqueueTone(durations.Q, [note('A4'), FunnyFuncGetNotesFrom('FOO')]);
+melody.enqueueTone(durations.Q, [note('A4')]);
+FunnyFuncGetNotesFrom('FOO');
 
 // play pause(Q) | note(A4, Q) - generuj ton A4 po czasie równym trwaniu ćwierćnuty
 melody.enqueuePause(durations.Q);
@@ -29,5 +30,6 @@ for(let i=0; i < 3; i++) {
     melody.enqueueTone(durations.Q, [note('C4')]);
 }
 
-// define melody is note(E4,Q) | note(E4,Q) - funkcja (makro) o nazwie melody, funkcja melody rozpoczyna utwór
-useYourSkillDude();
+// define melody is note(E4,Q) | note(E4,Q) - funkcja (makro) o nazwie melody
+melody.enqueueTone(durations.Q, [note('E4')]);
+melody.enqueueTone(durations.Q, [note('E4')]);
