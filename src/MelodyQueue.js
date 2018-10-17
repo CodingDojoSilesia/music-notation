@@ -26,29 +26,35 @@ class MelodyQueue
 				shape: this.shape
 			}).map(val => val + SILENCE));
         }
-		let volume = this.queue.length > 0 ? this.queue[this.queue.length - 1] : 0;
-		for (let i = 0; i < SAMPLING_FREQUENCY * this.autopause; ++i) {
-			if (volume > SILENCE) {
-				volume--;
-			} else if (volume < SILENCE) {
-				volume++;
-			}
-            this.queue.push(volume);
+        if (this.autopause > 0) {
+            this.enqueuePause(this.autopause);
         }
+        let sampleLimit = this.getLimit(tones);
+        this.combiningTonesAndPushToQueue(tones, sampleLimit);
+
+    }
+
+    combiningTonesAndPushToQueue(tones, sampleLimit) {
+        for (let i = 0; i < sampleLimit; ++i) {
+            let sound = tones[0][i];
+            for (let j = 1; j < tones.length; ++j) {
+                let newSound = tones[j][i];
+                sound = 2 * (sound + newSound) - sound * newSound / SILENCE - SILENCE * 2;
+            }
+            this.queue.push(sound);
+        }
+    }
+
+    getLimit(tones) {
 		let limit = tones[0].length;
 		for (let j = 1; j < tones.length; ++j) {
 			if (tones[j].length < limit) {
 				limit = tones[j].length;
 			}
 		}
-        for (let i = 0; i < limit; ++i) {
-            let sound = tones[0][i];
-            for (let j = 1; j < tones.length; ++j) {
-                sound = 2 * (sound + tones[j][i]) - sound * tones[j][i] / SILENCE - SILENCE * 2;
-            }
-            this.queue.push(sound);
-        }
+        return limit;
     }
+
     enqueuePause(duration) {
 		let volume = this.queue.length > 0 ? this.queue[this.queue.length - 1] : 0;
         for (let i = 0; i < SAMPLING_FREQUENCY * duration; ++i) {
