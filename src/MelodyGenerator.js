@@ -114,7 +114,7 @@ class MelodyGenerator {
     }
 
     matchNote(strNote) {
-        const match = strNote.match(/^note\(([\w;]+)\s*,\s*(\w)\)$/);
+        const match = strNote.match(/^note\(([\w#;]+)\s*,\s*(\w)\)$/);
         if (!match) {
             return null;
         }
@@ -138,7 +138,7 @@ class MelodyGenerator {
     }
 
     matchFunc(strNote) {
-        const match = strNote.match(/^[a-zA-Z]+$/);
+        const match = strNote.match(/^[a-zA-Z_]\w+$/);
         if (!match) {
             return null;
         }
