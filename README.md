@@ -1,6 +1,7 @@
 ## Podesłane projekty
 
 * [firemark](https://github.com/CodingDojoSilesia/music-notation/tree/fm-solution)
+* mój :)
 * twój :)
 
 ## Jak to uruchomić?
