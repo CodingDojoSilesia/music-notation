@@ -16,5 +16,6 @@ if (inputFilepath === null) {
 
 const data = fs.readFileSync(inputFilepath, 'utf8');
 const output = melodyGenerator.fromString(data);
+process.stderr.write(`Saving...\n`);
 waveGenerator.save(outputFilepath, output);
-process.stderr.write(`song has been saved to ${outputFilepath}\n`);
+process.stderr.write(`Song has been saved to ${outputFilepath}\n`);
