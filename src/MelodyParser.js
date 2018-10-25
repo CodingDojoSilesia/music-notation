@@ -11,7 +11,7 @@ class MelodyParser {
 
         this.melody = melody;
 
-        //palse to melody
+        //parse to melody
         let lines = this.lines(song);
         console.log('Preparing.');
         this.prepareCommands(lines);
