@@ -6,30 +6,40 @@ class MelodyParser {
     //interface method: song - text song, melody - MelodyQueue
     parse(song, melody) {
 
-        //reset melody queue
-        melody.queue = [];
-
-        this.melody = melody;
+        this.setupMelody(melody);
 
         //parse to melody
         let lines = this.lines(song);
-        console.log('Preparing.');
+
+        console.log('Preparing...');
         this.prepareCommands(lines);
+
         console.log('Building melody...');
-
         melody = this.buildMelody();
-        console.log('Parsing complete...');
 
+        console.log('Parsing complete.');
     }
 
-    //split to lines and cleanup - rid of unwanted spaces
-    lines(sng) {
+    setupMelody(mel) {
+        //setup melody queue
+        mel.queue = [];
+        this.melody = mel;
+    }
+
+    resetParser() {
         //reset parser
         this.defines = [];
         this.plays = [];
         this.sounds = [];
+    }
+
+    //split to lines and cleanup - rid of unwanted spaces
+    lines(sng) {
+
+        this.resetParser();
 
         //initial cleaning
+        ///////////////////////////
 
         // make single space separator
         while (sng !== (sng = sng.replace(/  /g, ' '))) {};
@@ -42,8 +52,7 @@ class MelodyParser {
         sng = sng.replace(/ ;/g, ';');
         sng = sng.replace(/; /g, ';');
         sng = sng.split("\n");
-        console.log(sng);
-        //make duration separator ready for split, return cleaned song definition
+
         return sng;
     }
 
@@ -93,10 +102,9 @@ class MelodyParser {
 
         let name = comm[1];
         for (let i = 3; i < comm.length; i++) {
-            if (comm[i] !== '|') { // ignore pipe separator
-                if (defs[name] === undefined) defs[name] = []; // init array
-                defs[name].push(comm[i]); //add a note to definition
-            }
+            if (comm[i] === '|') continue // ignore pipe separator
+            if (defs[name] === undefined) defs[name] = []; // init array
+            defs[name].push(comm[i]); //add a note to definition
         }
 
         return defs;
