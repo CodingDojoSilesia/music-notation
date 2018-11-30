@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="62285922-11a5-42f9-adeb-d86e1897e691" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MelodyGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MelodyGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/MelodyGenerator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -90,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="6" selection-end-line="4" />
+              <caret line="3" column="5" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -99,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/StringParser.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="795">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
@@ -248,12 +247,12 @@
       <workItem from="1539879106429" duration="1134000" />
       <workItem from="1539940718185" duration="6240000" />
       <workItem from="1540198080955" duration="48000" />
-      <workItem from="1543601254825" duration="353000" />
+      <workItem from="1543601254825" duration="443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7775000" />
+    <option name="totallyTimeSpent" value="7865000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -268,7 +267,7 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1864139" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1864139" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -283,7 +282,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Regex Tester" order="9" weight="0.32963374" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26237625" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26237625" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -361,7 +360,7 @@
     <entry file="file://$PROJECT_DIR$/src/StringParser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
@@ -371,14 +370,14 @@
     <entry file="file://$PROJECT_DIR$/src/MelodyGenerator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="6" selection-end-line="4" />
+          <caret line="3" column="5" selection-end-line="4" />
         </state>
       </provider>
     </entry>
