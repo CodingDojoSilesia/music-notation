@@ -1,0 +1,2 @@
+define mel01 is pause(HT) | note(E5, E)
+play repeat 100 times mel01 | pause(HT) | note(C5, E) | pause(HT) | note(E5, E) | pause(HT) | note(G5, E) | pause(HT) | note(G4, H)
